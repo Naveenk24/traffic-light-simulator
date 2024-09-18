@@ -1,0 +1,134 @@
+/* Traffic light container */
+.traffic-light {
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  height: 360px;
+  background-color: #111;
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* Individual lights */
+.light {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  font-size: 1.5rem;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
+}
+
+/* Active states for lights */
+.light.red.active {
+  background-color: #ff4c4c;
+  box-shadow: 0 0 15px #ff4c4c;
+}
+
+.light.yellow.active {
+  background-color: #ffd600;
+  box-shadow: 0 0 15px #ffd600;
+}
+
+.light.green.active {
+  background-color: #4caf50;
+  box-shadow: 0 0 15px #4caf50;
+}
+
+/* Countdown timer */
+.light span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.light.active span {
+  transform: scale(1.2);
+}
+
+/* Light transitions */
+.light {
+  transform: scale(0.9);
+}
+
+.light.active {
+  transform: scale(1);
+}
+
+/* Add a subtle glow for active lights */
+.light.active {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Pedestrian and emergency buttons */
+button {
+  padding: 11px 30px;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:focus {
+  outline: none;
+}
+
+.pedestrian-button {
+  background-color: #1e88e5;
+}
+
+.emergency-button {
+  background-color: #e53935;
+}
+
+button:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.pedestrian-button:hover {
+  background-color: #1565c0;
+}
+
+.emergency-button:hover {
+  background-color: #c62828;
+}
+
+/* Button layout */
+.buttons-container {
+  display: flex;
+  gap: 15px;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .traffic-light {
+    width: 100px;
+    height: 300px;
+  }
+
+  .light {
+    width: 80px;
+    height: 80px;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 10px 16px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
